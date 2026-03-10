@@ -4,57 +4,17 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  fileSystems."/" =
-    { device = "/dev/mapper/CRYPTROOT";
-      fsType = "btrfs";
-      options = [ "subvol=@root" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/home/hollowillow" =
-    { device = "/dev/mapper/CRYPTDATA";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime" "users" ];
-    };
-  boot.initrd.luks.devices."CRYPTROOT".device = "/dev/disk/by-uuid/bcb8418a-7831-46a0-ab20-074111ea6add";
-  boot.initrd.luks.devices."CRYPTDATA".device = "/dev/disk/by-uuid/983f4c2c-e993-46a6-be0a-e698b26111a7";
-
-  fileSystems."/nix" =
-    { device = "/dev/mapper/CRYPTROOT";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/persist" =
-    { device = "/dev/mapper/CRYPTROOT";
-      fsType = "btrfs";
-      options = [ "subvol=@persist" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/var/log" =
-    { device = "/dev/mapper/CRYPTROOT";
-      fsType = "btrfs";
-      options = [ "subvol=@log" "compress=zstd" "noatime" ];
-      neededForBoot = true;
-    };
-
-  fileSystems."/swap" =
-    { device = "/dev/mapper/CRYPTROOT";
-      fsType = "btrfs";
-      options = [ "subvol=@swap" ];
-    };
+  boot.loader = {
+  	systemd-boot.enable = true;
+  	efi.canTouchEfiVariables = true;
+  };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/46D6-82C2";
@@ -62,15 +22,58 @@
       options = [ "umask=0077" ];
     };
 
-  fileSystems."/home/hollowillow/media" =
-    { device = "/dev/mapper/CRYPTDATA";
+
+  boot.initrd.luks.devices = {
+  	"CRYPTROOT".device = "/dev/disk/by-uuid/bcb8418a-7831-46a0-ab20-074111ea6add";
+  	"CRYPTDATA".device = "/dev/disk/by-uuid/983f4c2c-e993-46a6-be0a-e698b26111a7";
+  };
+
+  fileSystems = {
+  	"/" = {
+		device = "/dev/mapper/CRYPTROOT";
+	      	fsType = "btrfs";
+	      	options = [ "subvol=@root" "compress=zstd" "noatime" ];
+	};
+	"/nix" = {
+		device = "/dev/mapper/CRYPTROOT";
+      		fsType = "btrfs";
+      		options = [ "subvol=@nix" "compress=zstd" "noatime" ];
+    	};
+	"/persist" = {
+		device = "/dev/mapper/CRYPTROOT";
+      		fsType = "btrfs";
+      		options = [ "subvol=@persist" "compress=zstd" "noatime" ];
+    	};
+	"/var/log" = {
+		device = "/dev/mapper/CRYPTROOT";
+      		fsType = "btrfs";
+      		options = [ "subvol=@log" "compress=zstd" "noatime" ];
+      		neededForBoot = true;
+    	};
+  };
+
+  fileSystems = {
+  	"/home/hollowillow" = { 
+		device = "/dev/mapper/CRYPTDATA";
+      		fsType = "btrfs";
+      		options = [ "subvol=@home" "compress=zstd" "noatime" "users" "exec" ];
+    	};
+	"/home/hollowillow/media" = {
+		device = "/dev/mapper/CRYPTDATA";
+      		fsType = "btrfs";
+      		options = [ "subvol=@media" "compress=zstd" "noatime" "users" "exec" ];
+    	};
+	"/home/hollowillow/.steam" = {
+		device = "/dev/mapper/CRYPTDATA";
+      		fsType = "btrfs";
+      		options = [ "subvol=@steam" "compress=zstd" "noatime" "users" "exec" ];
+    	};
+  };
+
+  fileSystems."/swap" =
+    { device = "/dev/mapper/CRYPTROOT";
       fsType = "btrfs";
-      options = [ "subvol=@media" "compress=zstd" "noatime" "users" ];
-    };
-  fileSystems."/home/hollowillow/steam" =
-    { device = "/dev/mapper/CRYPTDATA";
-      fsType = "btrfs";
-      options = [ "subvol=@steam" "compress=zstd" "noatime" "users" ];
+      options = [ "subvol=@swap" ];
     };
 
 
