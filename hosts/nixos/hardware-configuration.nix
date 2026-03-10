@@ -23,7 +23,13 @@
       options = [ "subvol=@root" "compress=zstd" "noatime" ];
     };
 
+  fileSystems."/home/hollowillow" =
+    { device = "/dev/mapper/CRYPTDATA";
+      fsType = "btrfs";
+      options = [ "subvol=@home" "compress=zstd" "noatime" "users" ];
+    };
   boot.initrd.luks.devices."CRYPTROOT".device = "/dev/disk/by-uuid/bcb8418a-7831-46a0-ab20-074111ea6add";
+  boot.initrd.luks.devices."CRYPTDATA".device = "/dev/disk/by-uuid/983f4c2c-e993-46a6-be0a-e698b26111a7";
 
   fileSystems."/nix" =
     { device = "/dev/mapper/CRYPTROOT";
@@ -55,6 +61,18 @@
       fsType = "vfat";
       options = [ "umask=0077" ];
     };
+
+  fileSystems."/home/hollowillow/media" =
+    { device = "/dev/mapper/CRYPTDATA";
+      fsType = "btrfs";
+      options = [ "subvol=@media" "compress=zstd" "noatime" "users" ];
+    };
+  fileSystems."/home/hollowillow/steam" =
+    { device = "/dev/mapper/CRYPTDATA";
+      fsType = "btrfs";
+      options = [ "subvol=@steam" "compress=zstd" "noatime" "users" ];
+    };
+
 
   swapDevices = [{
 	device = "/swap/swapfile";
