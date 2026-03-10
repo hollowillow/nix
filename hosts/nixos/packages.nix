@@ -13,6 +13,7 @@
     git
     stow
     keepassxc
+    yq-go
   ];
 
   programs.zoxide.enable = true; # smart cd
