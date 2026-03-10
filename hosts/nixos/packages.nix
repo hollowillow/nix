@@ -3,15 +3,18 @@
 {
   # https://search.nixos.org
   environment.systemPackages = with pkgs; [
-    neovim
-    iproute2
+    neovim # text editor
+    eza # pretty ls
+    atuin # smart shell history
+    fzf # fuzzy picker, alternative is skim
+    iproute2 # ip command
+    unixtools.ping # ping command
     firefox
     git
     stow
-    kitty
-    unixtools.ping
     keepassxc
   ];
 
+  programs.zoxide.enable = true; # smart cd
   # programs.firefox.enable = true;
 }
