@@ -15,10 +15,6 @@
 		environment.loginShellInit = ''
 			[[ "$(tty)" == /dev/tty1 ]] && start-hyprland
 		'';
-		systemd.user.services.dunst = {
-			enable = true;
-			wantedBy = [ "default.target" ];
-		};
   		environment.systemPackages = with pkgs; [
 			alacritty
 			waybar-mpris
