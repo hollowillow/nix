@@ -11,6 +11,7 @@
 		./shell/aliases.nix
 		./shell/variables.nix
 		./gaming/steam.nix
+		./gaming/discord.nix
 	];
 
 	# modules.fonts.enable = lib.mkDefault true;

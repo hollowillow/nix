@@ -15,7 +15,10 @@
 
   modules.network.eno.enable = true;
   modules.wm.hyprland.enable = true;
-  modules.gaming.steam.enable = true;
+  modules.gaming = {
+        steam.enable = true;
+        discord.enable = true;
+  };
 
   system.stateVersion = "25.11"; # Did you read the comment?
 }
