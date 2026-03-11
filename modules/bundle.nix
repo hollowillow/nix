@@ -12,6 +12,7 @@
 		./shell/variables.nix
 		./gaming/steam.nix
 		./gaming/discord.nix
+		./gaming/minecraft.nix
 	];
 
 	# modules.fonts.enable = lib.mkDefault true;

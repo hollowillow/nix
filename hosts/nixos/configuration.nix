@@ -18,6 +18,7 @@
   modules.gaming = {
         steam.enable = true;
         discord.enable = true;
+        minecraft.enable = true;
   };
 
   system.stateVersion = "25.11"; # Did you read the comment?
