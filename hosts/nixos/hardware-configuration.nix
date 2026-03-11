@@ -63,7 +63,7 @@
       		fsType = "btrfs";
       		options = [ "subvol=@media" "compress=zstd" "noatime" "users" "exec" ];
     	};
-	"/home/hollowillow/.steam" = {
+	"/home/hollowillow/.local/share/Steam/steamapps/common" = {
 		device = "/dev/mapper/CRYPTDATA";
       		fsType = "btrfs";
       		options = [ "subvol=@steam" "compress=zstd" "noatime" "users" "exec" ];
