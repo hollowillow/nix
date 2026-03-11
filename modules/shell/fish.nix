@@ -8,6 +8,18 @@
 			fish = {
 				enable = true;
 				generateCompletions = true;
+                                interactiveShellInit = ''
+                                        set fish_greeting
+                                        if command -v zoxide >/dev/null 2>&1
+                                                eval "$(zoxide init --cmd cd fish)"
+                                        end
+                                        if command -v atuin >/dev/null 2>&1
+                                                eval "$(atuin init fish)"
+                                        end
+                                        if command -v fzf >/dev/null 2>&1
+                                                eval "$(fzf --fish)"
+                                        end
+                                '';
 			};
 			zoxide = {
 				enable = true;
