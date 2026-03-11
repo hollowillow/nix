@@ -15,8 +15,8 @@
     keepassxc
     yq-go
     tmux
+    ranger
   ];
 
-  programs.zoxide.enable = true; # smart cd
   # programs.firefox.enable = true;
 }

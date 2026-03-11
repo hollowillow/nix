@@ -6,9 +6,8 @@
   		users.users.hollowillow = {
     			isNormalUser = true;
     			extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-			shell = pkgs.zsh;
+			useDefaultShell = true;
   		};
-		programs.zsh.enable = true;
 	};
 
 }
