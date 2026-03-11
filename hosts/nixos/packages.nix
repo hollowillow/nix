@@ -17,5 +17,7 @@
     jq
     tmux
     ranger
+    btop
+    ncdu
   ];
 }
