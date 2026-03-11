@@ -9,6 +9,7 @@
 		./system/fonts.nix
 		./shell/fish.nix
 		./shell/aliases.nix
+		./shell/variables.nix
 	];
 
 	# modules.fonts.enable = lib.mkDefault true;
@@ -18,4 +19,5 @@
 	modules.network.bluetooth.enable = lib.mkDefault true;
 	modules.shell.fish.enable = lib.mkDefault true;
 	modules.shell.aliases.enable = lib.mkDefault true;
+	modules.shell.variables.enable = lib.mkDefault true;
 }
