@@ -20,5 +20,7 @@
     (btop.override { rocmSupport = true; })
     rocmPackages.rocm-smi
     ncdu
+    ghostty
+    viu
   ];
 }

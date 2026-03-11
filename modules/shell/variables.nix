@@ -23,7 +23,7 @@
 			XDG_VIDEOS_DIR = "$HOME/media/videos";
 
 			# ENV VARIABLES
-			TERMINAL = "alacritty";
+			TERMINAL = "ghostty";
 			EDITOR = "nvim";
 			BROWSER= "firefox";
 			MENU = "fzf";
