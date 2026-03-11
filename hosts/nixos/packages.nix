@@ -14,6 +14,7 @@
     stow
     keepassxc
     yq-go
+    tmux
   ];
 
   programs.zoxide.enable = true; # smart cd
