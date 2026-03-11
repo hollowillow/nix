@@ -13,10 +13,9 @@
     git
     stow
     keepassxc
-    yq-go
+    yq
+    jq
     tmux
     ranger
   ];
-
-  # programs.firefox.enable = true;
 }
