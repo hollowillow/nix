@@ -17,7 +17,8 @@
     jq
     tmux
     ranger
-    btop
+    (btop.override { rocmSupport = true; })
+    rocmPackages.rocm-smi
     ncdu
   ];
 }
