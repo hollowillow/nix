@@ -10,6 +10,7 @@
 		./shell/fish.nix
 		./shell/aliases.nix
 		./shell/variables.nix
+		./gaming/steam.nix
 	];
 
 	# modules.fonts.enable = lib.mkDefault true;
