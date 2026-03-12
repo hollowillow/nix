@@ -20,6 +20,9 @@
 			mv = "mv -i";
 			cp = "cp -i";
 			ln = "ln -i";
+
+                        newsraft = "newsraft -f $HOME/notes/rss";
+                        ani-cli = "ani-cli --skip";
 		};
 	};
 

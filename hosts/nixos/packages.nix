@@ -21,5 +21,8 @@
     rocmPackages.rocm-smi
     ncdu
     viu
+    ani-cli
+    ani-skip
+    newsraft
   ];
 }
