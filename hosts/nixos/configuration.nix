@@ -23,6 +23,7 @@
         discord.enable = true;
         minecraft.enable = true;
   };
+  modules.programs.mpv.enable = true;
 
   system.stateVersion = "25.11"; # Did you read the comment?
 }
