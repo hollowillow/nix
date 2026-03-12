@@ -14,8 +14,19 @@
 		environment.loginShellInit = ''
 			[[ "$(tty)" == /dev/tty1 ]] && start-hyprland
 		'';
+                xdg.portal = {
+                        enable = true;
+                        extraPortals = with pkgs; [
+                                xdg-desktop-portal-hyprland
+                                xdg-desktop-portal-gtk
+                        ];
+                        config.hyprland.default = [ "gtk" "hyprland" ];
+                };
   		environment.systemPackages = with pkgs; [
-			alacritty
+                        grim # xdg dp dependancy
+                        slurp # xdg dp dependancy
+			# alacritty
+                        ghostty
 			swaybg
 			wl-clipboard
 			dunst # or snc or mako?
