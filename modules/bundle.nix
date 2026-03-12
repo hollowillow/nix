@@ -2,6 +2,7 @@
 
 	imports = [
 		./wm/hyprland.nix
+		./wm/waybar.nix
 		./network/eno.nix
 		./network/bluetooth.nix
 		./system/user.nix

@@ -14,7 +14,10 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   modules.network.eno.enable = true;
-  modules.wm.hyprland.enable = true;
+  modules.wm = {
+        hyprland.enable = true;
+        waybar.enable = true;
+  };
   modules.gaming = {
         steam.enable = true;
         discord.enable = true;

@@ -7,7 +7,6 @@
 			enable = true;
 			xwayland.enable = true;
 		};
-  		programs.waybar.enable = true;
 		services.getty = {
 			autologinUser = "hollowillow";
 			autologinOnce = true;
@@ -17,7 +16,6 @@
 		'';
   		environment.systemPackages = with pkgs; [
 			alacritty
-			waybar-mpris
 			swaybg
 			wl-clipboard
 			dunst # or snc or mako?
