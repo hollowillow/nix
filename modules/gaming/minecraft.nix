@@ -4,7 +4,7 @@
 
         config = lib.mkIf config.modules.gaming.minecraft.enable {
                 environment.systemPackages = with pkgs; [
-                        inputs.prismlauncher.packages.${pkgs.system}.prismlauncher
+                        inputs.prismlauncher.packages.${pkgs.stdenv.hostPlatform.system}.prismlauncher
                         jdk8
                         jdk17
                         jdk21
