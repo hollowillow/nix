@@ -22,6 +22,8 @@
 			XDG_TEMPLATES_DIR = "$HOME/inbox/templates";
 			XDG_VIDEOS_DIR = "$HOME/media/videos";
 
+			GRIM_DEFAULT_DIR = "$HOME/media/pictures/screenshots";
+
 			# ENV VARIABLES
 			TERMINAL = "ghostty";
 			EDITOR = "nvim";

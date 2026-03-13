@@ -12,7 +12,7 @@
 			autologinOnce = true;
 		};
 		environment.loginShellInit = ''
-			[[ "$(tty)" == /dev/tty1 ]] && start-hyprland
+			[[ "$(tty)" == /dev/tty1 ]] && (sleep 0.2; start-hyprland)
 		'';
                 xdg.portal = {
                         enable = true;

@@ -24,5 +24,6 @@
     ani-cli
     ani-skip
     newsraft
+    qbittorrent
   ];
 }
