@@ -6,7 +6,8 @@
 		environment.shellAliases = {
 			ls = "eza --color=always --icons=always --group-directories-first";
 			ll = "eza --color=always --icons=always --group-directories-first --all --long";
-			lf = "ranger";
+                        lf = "cd \"$(command lf -print-last-dir $argv)\"";
+
 			vi = "nvim";
 			vim = "nvim";
 

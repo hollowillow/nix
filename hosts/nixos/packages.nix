@@ -16,7 +16,9 @@
     yq
     jq
     tmux
-    ranger
+    # ranger
+    lf
+    bat
     (btop.override { rocmSupport = true; })
     rocmPackages.rocm-smi
     ncdu
