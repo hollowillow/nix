@@ -14,6 +14,7 @@
 		./gaming/steam.nix
 		./gaming/discord.nix
 		./gaming/minecraft.nix
+		./gaming/retroarch.nix
 		./programs/mpv.nix
 	];
 

@@ -22,6 +22,7 @@
         steam.enable = true;
         discord.enable = true;
         minecraft.enable = true;
+        retroarch.enable = true;
   };
   modules.programs.mpv.enable = true;
 
