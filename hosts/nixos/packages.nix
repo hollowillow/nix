@@ -27,5 +27,6 @@
     ani-skip
     newsraft
     qbittorrent
+    mkvtoolnix
   ];
 }
