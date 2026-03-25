@@ -17,6 +17,21 @@
                         gamemode.enable = true;
                 };
 
+                # Automatically launch steam when a controller is connected
+                systemd.user.services.controller-autolaunch = {
+                        enable = true;
+                        description = "Launch steam";
+                        serviceConfig = {
+                                # Type = "simple";
+                                ExecStart = "${pkgs.steam}/bin/steam -bigpicture";
+                                # Restart = "on-failure";
+                                # RestartSec = "5s";
+                        };
+                };
+                services.udev.extraRules = ''
+                        TAG+="systemd", ACTION=="add", KERNEL=="js*", SUBSYSTEM=="input", ENV{SYSTEMD_USER_WANTS}+="controller-autolaunch.service"
+                '';
+
                 # Enable OpenGL/Vulkan
                 services.xserver.videoDrivers = [ "amdgpu" ];
                 hardware.graphics = {
