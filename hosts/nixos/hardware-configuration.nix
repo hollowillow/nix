@@ -19,8 +19,16 @@
         extraModulePackages = [ ];
         loader = {
                 systemd-boot.enable = true;
+                systemd-boot.consoleMode = "max";
                 efi.canTouchEfiVariables = true;
                 timeout = 0;
+        };
+        plymouth = {
+                enable = true;
+                theme = "breeze";
+                # tpm2-totp.enable = true;
+                logo = "${pkgs.nixos-icons}/share/icons/hicolor/256x256/apps/nix-snowflake-white.png";
+                extraConfig = "DeviceScale=1";
         };
   };
 
