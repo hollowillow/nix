@@ -6,14 +6,22 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
-
-  boot.loader = {
-  	systemd-boot.enable = true;
-  	efi.canTouchEfiVariables = true;
+  boot = {
+        initrd = {
+                availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+                kernelModules = [ ];
+                verbose = false;
+                systemd.enable = true;
+        };
+        kernelModules = [ "kvm-amd" ];
+        consoleLogLevel = 3;
+        kernelParams = [ "quiet" "systemd.show_status=auto" "rd.udev.log_level=3" ];
+        extraModulePackages = [ ];
+        loader = {
+                systemd-boot.enable = true;
+                efi.canTouchEfiVariables = true;
+                timeout = 0;
+        };
   };
 
   fileSystems."/boot" =
@@ -75,7 +83,6 @@
       fsType = "btrfs";
       options = [ "subvol=@swap" ];
     };
-
 
   swapDevices = [{
 	device = "/swap/swapfile";
