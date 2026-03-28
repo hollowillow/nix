@@ -11,6 +11,7 @@
 		./shell/fish.nix
 		./shell/aliases.nix
 		./shell/variables.nix
+		./shell/lf.nix
 		./gaming/steam.nix
 		./gaming/discord.nix
 		./gaming/minecraft.nix
@@ -26,4 +27,5 @@
 	modules.shell.fish.enable = lib.mkDefault true;
 	modules.shell.aliases.enable = lib.mkDefault true;
 	modules.shell.variables.enable = lib.mkDefault true;
+	modules.shell.lf.enable = lib.mkDefault true;
 }
