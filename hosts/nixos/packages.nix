@@ -17,7 +17,6 @@
     jq
     tmux
     # ranger
-    lf
     bat
     (btop.override { rocmSupport = true; })
     rocmPackages.rocm-smi
@@ -28,5 +27,6 @@
     newsraft
     qbittorrent
     mkvtoolnix
+    fd
   ];
 }
