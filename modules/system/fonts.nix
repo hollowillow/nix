@@ -7,17 +7,16 @@
 	config = lib.mkIf config.modules.system.fonts.enable {
 		fonts= {
 			packages = with pkgs; [
-				noto-fonts
-				nerd-fonts.hasklug
-				nerd-fonts.caskaydia-mono
-				ipaexfont
+				noto-fonts # compat
+				nerd-fonts.hasklug # term
+				ipaexfont # jap
 			];
 			fontconfig = {
 				enable = true;
 				defaultFonts = {
-					serif = [ "CaskaydiaMono NF" "IPAexGothic" ];
-					sansSerif = [ "CaskaydiaMono NF" "IPAexGothic" ];
-					monospace = [ "Hasklug Nerd Font Mono Sembd" ];
+					serif = [ "Hasklug Nerd Font Propo" "IPAexGothic" "Noto Sans Regular" ];
+					sansSerif = [ "Hasklug Nerd Font Propo" "IPAexGothic" "Noto Serif Regular" ];
+					monospace = [ "Hasklug Nerd Font Mono Sembd" "Noto Sans Mono Regular" ];
 					# emoji = [];
 				};
 			};
