@@ -30,9 +30,9 @@
 			BROWSER= "firefox";
 			MENU = "fzf";
 			MANPAGER="nvim +Man! +'set relativenumber'";
+			LS_COLORS="$(dircolors -p)";
 
 			# SCRIPT VARIABLES
-			WALLPAPERS_DIR = "$HOME/.local/share/wallpapers/hd";
 			NOTES_DIR = "$HOME/notes/zettelkasten";
 			BOOKMARK_FILE = "$HOME/notes/bookmarks.json";
 			SEARCH_HIST_FILE = "$HOME/.local/state/search_history";
