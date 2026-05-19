@@ -28,5 +28,6 @@
     qbittorrent
     mkvtoolnix
     fd
+    ripgrep
   ];
 }
