@@ -1,24 +1,24 @@
 {
-  description = "A very basic flake";
+    description = "A very basic flake";
 
-  inputs = {
+    inputs = {
         nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
         prismlauncher = {
-                url = "github:diegiwg/prismlauncher-cracked";
-                inputs.nixpkgs.follows = "nixpkgs";
+            url = "github:diegiwg/prismlauncher-cracked";
+            # inputs.nixpkgs.follows = "nixpkgs";
         };
-  };
+    };
 
-  outputs = { nixpkgs, ... } @ inputs:
-  let
+    outputs = { nixpkgs, ... } @ inputs:
+    let
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-  in {
+    in {
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-                specialArgs = { inherit inputs; };
-                modules = [
+            specialArgs = { inherit inputs; };
+            modules = [
                 ./hosts/nixos/configuration.nix
                 ./modules/bundle.nix
-                ];
+            ];
         };
-  };
+    };
 }
