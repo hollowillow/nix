@@ -6,8 +6,8 @@
         programs.fish.interactiveShellInit = "bind \" \" expand-abbr or self-insert";
         programs.fish.shellAbbrs = {
             # NVIM
-            vi = "nvim";
-            vim = "nvim";
+            vi = "nvim ";
+            vim = "nvim ";
 
             # GIT
             gs = "git status";
