@@ -1,7 +1,8 @@
 { pkgs, lib, config, inputs, ... }:
 {
   options = {
-    modules.browser.librewolf.enable = lib.mkEnableOption "Enable librewolf";
+    modules.browser.librewolf.enable =
+      lib.mkEnableOption "Enable librewolf";
   };
 
   config = lib.mkIf config.modules.browser.librewolf.enable {
