@@ -28,7 +28,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/nixos/configuration.nix
-          ./modules/bundle.nix
+          ./modules
           home-manager.nixosModules.default
           {
             home-manager = {
