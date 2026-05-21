@@ -7,6 +7,10 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        firefox-addons = {
+            url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         prismlauncher = {
             url = "github:diegiwg/prismlauncher-cracked";
             # inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +19,8 @@
 
     outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        system = "x86_64-linux";
+        pkgs = nixpkgs.legacyPackages.${system};
     in {
         nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
             specialArgs = { inherit inputs; };
@@ -25,6 +30,7 @@
                 home-manager.nixosModules.default
                 {
                     home-manager = {
+                        extraSpecialArgs = { inherit inputs; };
                         useGlobalPkgs = true;
                         useUserPackages = true;
                         users.hollowillow = ./home/hollowillow/home.nix;
