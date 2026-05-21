@@ -8,19 +8,19 @@
 			PATH = "$PATH:$HOME/.local/scripts";
 
 			# XDG VARIABLES
-			XDG_CONFIG_HOME = "$HOME/.config";
-			XDG_DATA_HOME = "$HOME/.local/share";
-			XDG_STATE_HOME = "$HOME/.local/state";
-			XDG_CACHE_HOME = "$HOME/.cache";
-
-			XDG_DESKTOP_DIR = "$HOME";
-			XDG_DOCUMENTS_DIR = "$HOME/media/documents";
-			XDG_DOWNLOAD_DIR = "$HOME/inbox";
-			XDG_MUSIC_DIR = "$HOME/media/music";
-			XDG_PICTURES_DIR = "$HOME/media/pictures";
-			XDG_PUBLICSHARE_DIR = "$HOME/inbox/public";
-			XDG_TEMPLATES_DIR = "$HOME/inbox/templates";
-			XDG_VIDEOS_DIR = "$HOME/media/videos";
+			# XDG_CONFIG_HOME = "$HOME/.config";
+			# XDG_DATA_HOME = "$HOME/.local/share";
+			# XDG_STATE_HOME = "$HOME/.local/state";
+			# XDG_CACHE_HOME = "$HOME/.cache";
+			#
+			# XDG_DESKTOP_DIR = "$HOME";
+			# XDG_DOCUMENTS_DIR = "$HOME/media/documents";
+			# XDG_DOWNLOAD_DIR = "$HOME/inbox";
+			# XDG_MUSIC_DIR = "$HOME/media/music";
+			# XDG_PICTURES_DIR = "$HOME/media/pictures";
+			# XDG_PUBLICSHARE_DIR = "$HOME/inbox/public";
+			# XDG_TEMPLATES_DIR = "$HOME/inbox/templates";
+			# XDG_VIDEOS_DIR = "$HOME/media/videos";
 
 			# ENV VARIABLES
 			TERMINAL = "ghostty";
