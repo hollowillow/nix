@@ -35,7 +35,12 @@
               extraSpecialArgs = { inherit inputs; };
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.hollowillow = ./home/hollowillow/home.nix;
+              users.hollowillow = {
+                imports = [
+                  ./hosts/nixos/home.nix
+                  ./home
+                ];
+              };
             };
           }
         ];
