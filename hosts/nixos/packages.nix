@@ -30,5 +30,7 @@
         fd
         ripgrep
         awww
+        adwaita-qt
+        adwaita-qt6
     ];
 }

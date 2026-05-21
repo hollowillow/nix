@@ -22,8 +22,6 @@
 			XDG_TEMPLATES_DIR = "$HOME/inbox/templates";
 			XDG_VIDEOS_DIR = "$HOME/media/videos";
 
-			GRIM_DEFAULT_DIR = "$HOME/media/pictures/screenshots";
-
 			# ENV VARIABLES
 			TERMINAL = "ghostty";
 			EDITOR = "nvim";
@@ -41,6 +39,10 @@
 			FZF_DEFAULT_HEADER = "btab:toggle-all  ctrl-a:select-all  ctrl-d:deselect-all  ctrl-t:toggle-preview";
 			FZF_DEFAULT_OPTS_FILE = "$HOME/.config/fzfrc";
 			RIPGREP_CONFIG_PATH = "$HOME/.config/ripgreprc";
+
+            # OTHER
+            QT_STYLE_OVERRIDE = "adwaita-dark";
+			GRIM_DEFAULT_DIR = "$HOME/media/pictures/screenshots";
 		};
 	};
 
