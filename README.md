@@ -6,28 +6,28 @@
 
 ## General directory structure
 ```
- .
-├── 󱂵 home
-│   ├──  browser
-│   │   ├──  librewolf.nix
-│   │   └──  ...
-│   ├──  ...
-│   └──  default.nix
-├──  hosts
-│   └──  nixos
-│       ├──  configuration.nix
-│       ├──  hardware-configuration.nix
-│       ├──  home.nix
-│       └──  packages.nix
-├──  modules
-│   ├──  shell
-│   │   ├──  fish.nix
-│   │   └──  ...
-│   ├──  ...
-│   └──  default.nix
-├──  flake.lock
-├──  flake.nix
-└── 󰂺 README.md
+./
+├── home/
+│   ├── browser/
+│   │   ├── librewolf.nix
+│   │   └── ...
+│   ├── ...
+│   └── default.nix
+├── hosts/
+│   └── nixos/
+│       ├── configuration.nix
+│       ├── hardware-configuration.nix
+│       ├── home.nix
+│       └── packages.nix
+├── modules/
+│   ├── shell/
+│   │   ├── fish.nix
+│   │   └── ...
+│   ├── ...
+│   └── default.nix
+├── flake.lock
+├── flake.nix
+└── README.md
 ```
 
 - All nixos modules are located in `modules/`, and split into categories
