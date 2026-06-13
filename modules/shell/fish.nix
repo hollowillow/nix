@@ -18,6 +18,7 @@
           command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init --cmd cd fish)"
           command -v atuin >/dev/null 2>&1 && eval "$(atuin init fish)"
           command -v fzf >/dev/null 2>&1 && eval "$(fzf --fish)"
+          bind ctrl-g git_open
         '';
       };
       zoxide = {
