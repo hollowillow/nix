@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   cursorName = "Bibata-Modern-Classic";
   cursorPackage = pkgs.bibata-cursors;
@@ -12,8 +17,7 @@ let
 in
 {
   options = {
-    modules.other.theme.enable = 
-      lib.mkEnableOption "Enable gtk and qt theming";
+    modules.other.theme.enable = lib.mkEnableOption "Enable gtk and qt theming";
   };
 
   config = lib.mkIf config.modules.other.theme.enable {

@@ -1,7 +1,11 @@
-{ pkgs, lib, config, ... }:
 {
-  options.modules.shell.fishAbbr.enable = 
-    lib.mkEnableOption "Enables fish abbreviations";
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  options.modules.shell.fishAbbr.enable = lib.mkEnableOption "Enables fish abbreviations";
 
   config = lib.mkIf config.modules.shell.fishAbbr.enable {
     programs.fish.interactiveShellInit = "bind \" \" expand-abbr or self-insert";
@@ -35,5 +39,4 @@
       nfu = "nix flake update";
     };
   };
-
 }

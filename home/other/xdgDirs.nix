@@ -1,11 +1,15 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   home = config.home.homeDirectory;
 in
 {
   options = {
-    modules.other.xdgDirs.enable = 
-      lib.mkEnableOption "Enables XDG dir specification";
+    modules.other.xdgDirs.enable = lib.mkEnableOption "Enables XDG dir specification";
   };
 
   config = lib.mkIf config.modules.other.xdgDirs.enable {

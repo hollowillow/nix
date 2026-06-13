@@ -1,8 +1,12 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
-    modules.browser.engines.enable = 
-      lib.mkEnableOption "Enable engines for librewolf";
+    modules.browser.engines.enable = lib.mkEnableOption "Enable engines for librewolf";
   };
 
   config = lib.mkIf config.modules.browser.engines.enable {

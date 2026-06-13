@@ -1,14 +1,17 @@
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  options.modules.system.user.enable = lib.mkEnableOption "Enables default user config";
 
-	options.modules.system.user.enable = lib.mkEnableOption "Enables default user config";
-
-	config = lib.mkIf config.modules.system.user.enable {
-  		users.users.hollowillow = {
-    			isNormalUser = true;
-    			extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-			useDefaultShell = true;
-  		};
-	};
-
+  config = lib.mkIf config.modules.system.user.enable {
+    users.users.hollowillow = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+      useDefaultShell = true;
+    };
+  };
 }
-

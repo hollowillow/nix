@@ -1,14 +1,19 @@
-{ pkgs, lib, config, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
+{
+  options.modules.gaming.minecraft.enable = lib.mkEnableOption "Enables Minecraft";
 
-        options.modules.gaming.minecraft.enable = lib.mkEnableOption "Enables Discord";
-
-        config = lib.mkIf config.modules.gaming.minecraft.enable {
-                environment.systemPackages = with pkgs; [
-                        inputs.prismlauncher.packages.${pkgs.stdenv.hostPlatform.system}.prismlauncher
-                        jdk8
-                        jdk17
-                        jdk21
-                ];
-        };
-
+  config = lib.mkIf config.modules.gaming.minecraft.enable {
+    environment.systemPackages = with pkgs; [
+      inputs.prismlauncher.packages.${pkgs.stdenv.hostPlatform.system}.prismlauncher
+      jdk8
+      jdk17
+      jdk21
+    ];
+  };
 }

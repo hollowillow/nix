@@ -1,11 +1,15 @@
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  options.modules.gaming.discord.enable = lib.mkEnableOption "Enables Discord";
 
-        options.modules.gaming.discord.enable = lib.mkEnableOption "Enables Discord";
-
-        config = lib.mkIf config.modules.gaming.discord.enable {
-                environment.systemPackages = with pkgs; [
-                        discord-canary
-                ];
-        };
-
+  config = lib.mkIf config.modules.gaming.discord.enable {
+    environment.systemPackages = with pkgs; [
+      discord-canary
+    ];
+  };
 }

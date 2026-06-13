@@ -1,12 +1,19 @@
-{ config, lib, pkgs, ... }:
-
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
-      ./hardware-configuration.nix
-      ./packages.nix
+    ./hardware-configuration.nix
+    ./packages.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "nixos";
@@ -15,14 +22,14 @@
 
   modules.network.eno.enable = true;
   modules.wm = {
-        hyprland.enable = true;
-        waybar.enable = true;
+    hyprland.enable = true;
+    waybar.enable = true;
   };
   modules.gaming = {
-        steam.enable = true;
-        discord.enable = true;
-        minecraft.enable = true;
-        retroarch.enable = true;
+    steam.enable = true;
+    discord.enable = true;
+    minecraft.enable = true;
+    retroarch.enable = true;
   };
   modules.programs.mpv.enable = true;
 

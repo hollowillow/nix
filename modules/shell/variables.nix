@@ -1,7 +1,11 @@
-{ pkgs, lib, config, ... }:
 {
-  options.modules.shell.variables.enable = 
-    lib.mkEnableOption "Enables shell aliases";
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
+  options.modules.shell.variables.enable = lib.mkEnableOption "Enables shell aliases";
 
   config = lib.mkIf config.modules.shell.variables.enable {
     environment.variables = {
@@ -46,5 +50,4 @@
       GRIM_DEFAULT_DIR = "$HOME/media/pictures/screenshots";
     };
   };
-
 }
