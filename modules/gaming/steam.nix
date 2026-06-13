@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.gaming.steam.enable = lib.mkEnableOption "Enables Steam";
 
   config = lib.mkIf config.modules.gaming.steam.enable {
@@ -38,7 +37,7 @@
     '';
 
     # Enable OpenGL/Vulkan
-    services.xserver.videoDrivers = [ "amdgpu" ];
+    services.xserver.videoDrivers = ["amdgpu"];
     hardware.graphics = {
       enable = true;
       enable32Bit = true; # Crucial for running 32-bit games (like Wine/Proton)

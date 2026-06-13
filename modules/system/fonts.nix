@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options = {
     modules.system.fonts.enable = lib.mkEnableOption "Enables font module";
   };

@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
-{
+{lib, ...}: {
   imports = [
     ./wm/hyprland.nix
     ./wm/waybar.nix

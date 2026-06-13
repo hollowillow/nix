@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-let
+}: let
   cursorName = "Bibata-Modern-Classic";
   cursorPackage = pkgs.bibata-cursors;
   cursorSize = 24;
@@ -14,8 +13,7 @@ let
   qtName = "adwaita-dark";
   iconName = "GruvboxPlus";
   iconPackage = pkgs.gruvbox-plus-icons;
-in
-{
+in {
   options = {
     modules.other.theme.enable = lib.mkEnableOption "Enable gtk and qt theming";
   };
@@ -58,7 +56,7 @@ in
     # needs to be set as an environment variable for theme to apply
     qt = {
       enable = true;
-      platformTheme.name = "gtk3";
+      platformTheme.name = qtPlatform;
       style = {
         name = qtName;
       };

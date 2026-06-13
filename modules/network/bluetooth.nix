@@ -1,10 +1,8 @@
 {
-  pkgs,
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.network.bluetooth.enable = lib.mkEnableOption "Enables bluetooth configuration";
 
   config = lib.mkIf config.modules.network.bluetooth.enable {
@@ -15,8 +13,8 @@
     services.blueman.enable = true;
     systemd.user.services.mpris-proxy = {
       enable = true;
-      after = [ "bluetooth.service" ];
-      wantedBy = [ "default.target" ];
+      after = ["bluetooth.service"];
+      wantedBy = ["default.target"];
     };
   };
 }

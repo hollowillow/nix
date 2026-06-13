@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.shell.fish.enable = lib.mkEnableOption "Enables fish shell";
 
   config = lib.mkIf config.modules.shell.fish.enable {

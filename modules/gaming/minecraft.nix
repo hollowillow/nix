@@ -4,8 +4,7 @@
   config,
   inputs,
   ...
-}:
-{
+}: {
   options.modules.gaming.minecraft.enable = lib.mkEnableOption "Enables Minecraft";
 
   config = lib.mkIf config.modules.gaming.minecraft.enable {

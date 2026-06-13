@@ -1,10 +1,8 @@
 {
-  pkgs,
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.network.eno.enable = lib.mkEnableOption "Enables wired network configuration";
 
   config = lib.mkIf config.modules.network.eno.enable {

@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options = {
     modules.browser.engines.enable = lib.mkEnableOption "Enable engines for librewolf";
   };
@@ -42,7 +41,7 @@
             }
           ];
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@np" ];
+          definedAliases = ["@np"];
         };
         "Nix Options" = {
           urls = [
@@ -61,7 +60,7 @@
             }
           ];
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@no" ];
+          definedAliases = ["@no"];
         };
         "MyNixOS" = {
           urls = [
@@ -76,7 +75,7 @@
             }
           ];
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@ns" ];
+          definedAliases = ["@ns"];
         };
         "NixOS Wiki" = {
           urls = [
@@ -91,7 +90,7 @@
             }
           ];
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@nw" ];
+          definedAliases = ["@nw"];
         };
         "Github" = {
           urls = [
@@ -109,7 +108,7 @@
               ];
             }
           ];
-          definedAliases = [ "@gh" ];
+          definedAliases = ["@gh"];
         };
       };
     };

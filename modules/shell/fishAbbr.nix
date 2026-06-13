@@ -1,10 +1,8 @@
 {
-  pkgs,
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.shell.fishAbbr.enable = lib.mkEnableOption "Enables fish abbreviations";
 
   config = lib.mkIf config.modules.shell.fishAbbr.enable {

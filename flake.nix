@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "NixOS configuration with Home Manager";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -13,41 +13,37 @@
     };
     prismlauncher = {
       url = "github:diegiwg/prismlauncher-cracked";
-      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/nixos/configuration.nix
-          ./modules
-          home-manager.nixosModules.default
-          {
-            home-manager = {
-              extraSpecialArgs = { inherit inputs; };
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.hollowillow = {
-                imports = [
-                  ./hosts/nixos/home.nix
-                  ./home
-                ];
-              };
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/nixos/configuration.nix
+        ./modules
+        home-manager.nixosModules.default
+        {
+          home-manager = {
+            extraSpecialArgs = {inherit inputs;};
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.hollowillow = {
+              imports = [
+                ./hosts/nixos/home.nix
+                ./home
+              ];
             };
-          }
-        ];
-      };
+          };
+        }
+      ];
     };
+  };
 }

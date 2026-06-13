@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.programs.mpv.enable = lib.mkEnableOption "Enables mpv";
 
   config = lib.mkIf config.modules.programs.mpv.enable {

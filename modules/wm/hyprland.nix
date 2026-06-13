@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.wm.hyprland.enable = lib.mkEnableOption "Enables hyprland";
 
   config = lib.mkIf config.modules.wm.hyprland.enable {

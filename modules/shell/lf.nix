@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.shell.lf.enable = lib.mkEnableOption "Enables lf file manager";
 
   config = lib.mkIf config.modules.shell.lf.enable {

@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.wm.portal.enable = lib.mkEnableOption "Enables xdg desktop portal for hyprland";
 
   config = lib.mkIf config.modules.wm.portal.enable {
@@ -14,7 +13,7 @@
         xdg-desktop-portal-hyprland
         xdg-desktop-portal-gtk
       ];
-      config.common.default = [ "gtk" ];
+      config.common.default = ["gtk"];
       config.hyprland.default = [
         "gtk"
         "hyprland"

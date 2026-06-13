@@ -4,9 +4,8 @@
   pkgs,
   modulesPath,
   ...
-}:
-{
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+}: {
+  imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
   boot = {
     initrd = {
@@ -18,18 +17,18 @@
         "usbhid"
         "sd_mod"
       ];
-      kernelModules = [ "amdgpu" ];
+      kernelModules = ["amdgpu"];
       verbose = false;
       systemd.enable = true;
     };
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = ["kvm-amd"];
     consoleLogLevel = 3;
     kernelParams = [
       "quiet"
       "systemd.show_status=auto"
       "rd.udev.log_level=3"
     ];
-    extraModulePackages = [ ];
+    extraModulePackages = [];
     loader = {
       systemd-boot.enable = true;
       systemd-boot.consoleMode = "max";
@@ -49,7 +48,7 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/46D6-82C2";
     fsType = "vfat";
-    options = [ "umask=0077" ];
+    options = ["umask=0077"];
   };
   boot.initrd.luks.devices = {
     "CRYPTROOT".device = "/dev/disk/by-uuid/bcb8418a-7831-46a0-ab20-074111ea6add";
@@ -138,7 +137,7 @@
   fileSystems."/swap" = {
     device = "/dev/mapper/CRYPTROOT";
     fsType = "btrfs";
-    options = [ "subvol=@swap" ];
+    options = ["subvol=@swap"];
   };
   swapDevices = [
     {

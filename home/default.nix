@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
-{
+{lib, ...}: {
   imports = [
     ./browser/librewolf.nix
     ./browser/engines.nix

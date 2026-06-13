@@ -1,10 +1,8 @@
 {
-  pkgs,
   lib,
   config,
   ...
-}:
-{
+}: {
   options.modules.shell.aliases.enable = lib.mkEnableOption "Enables shell aliases";
 
   config = lib.mkIf config.modules.shell.aliases.enable {

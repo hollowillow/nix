@@ -1,10 +1,8 @@
 {
-  pkgs,
   lib,
   config,
   ...
-}:
-{
+}: {
   options = {
     modules.browser.bookmarks.enable = lib.mkEnableOption "Enable bookmarks for librewolf";
   };

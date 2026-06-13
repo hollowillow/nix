@@ -4,8 +4,7 @@
   config,
   inputs,
   ...
-}:
-{
+}: {
   options = {
     modules.browser.librewolf.enable = lib.mkEnableOption "Enable librewolf";
   };
