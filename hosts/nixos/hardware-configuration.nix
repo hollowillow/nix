@@ -94,6 +94,15 @@
       ];
       neededForBoot = true;
     };
+    "/vm" = {
+      device = "/dev/mapper/CRYPTROOT";
+      fsType = "btrfs";
+      options = [
+        "subvol=@vm"
+        "compress=zstd"
+        "noatime"
+      ];
+    };
   };
 
   # HOME disk
