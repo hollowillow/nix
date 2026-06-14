@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   # https://search.nixos.org
   environment.systemPackages = with pkgs; [
     # DEV TOOLS
@@ -19,7 +15,6 @@
 
     iproute2 # ip command
     unixtools.ping # ping command
-    firefox
     stow
     keepassxc
     yq
@@ -29,13 +24,10 @@
     (btop.override {rocmSupport = true;})
     rocmPackages.rocm-smi
     ncdu
-    viu
     ani-cli
     ani-skip
     newsraft
     qbittorrent
     mkvtoolnix
-    awww
   ];
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 }

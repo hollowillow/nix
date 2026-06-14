@@ -43,6 +43,7 @@
       hyprsunset
       hyprlock
       hypridle
+      awww
       # ydotool
       # wev
     ];
