@@ -12,6 +12,7 @@
     ripgrep # better grep
     alejandra # nix formatting
     nixd # nix language server
+    sqlite # database
 
     iproute2 # ip command
     unixtools.ping # ping command
