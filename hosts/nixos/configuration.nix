@@ -1,9 +1,10 @@
-{...}: {
+{inputs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
   ];
 
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -26,6 +27,7 @@
     retroarch.enable = true;
   };
   modules.programs.mpv.enable = true;
+  modules.virtualisation.vm.enable = true;
 
   system.stateVersion = "25.11"; # Did you read the comment?
 }

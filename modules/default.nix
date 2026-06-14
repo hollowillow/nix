@@ -12,11 +12,13 @@
     ./shell/aliases.nix
     ./shell/variables.nix
     ./shell/lf.nix
+    ./shell/direnv.nix
     ./gaming/steam.nix
     ./gaming/discord.nix
     ./gaming/minecraft.nix
     ./gaming/retroarch.nix
     ./programs/mpv.nix
+    ./virtualisation/vm.nix
   ];
 
   modules.system.user.enable = lib.mkDefault true;
@@ -28,4 +30,5 @@
   modules.shell.aliases.enable = lib.mkDefault true;
   modules.shell.variables.enable = lib.mkDefault true;
   modules.shell.lf.enable = lib.mkDefault true;
+  modules.shell.direnv.enable = lib.mkDefault true;
 }
