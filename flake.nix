@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     prismlauncher = {
-      url = "github:diegiwg/prismlauncher-cracked";
+      url = "github:ElyPrismLauncher/Launcher";
     };
   };
 
