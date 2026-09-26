@@ -4,6 +4,8 @@
     ./packages.nix
   ];
 
+  services.dbus.enable = true;
+
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   nix.settings.experimental-features = [
     "nix-command"
