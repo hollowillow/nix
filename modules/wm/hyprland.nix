@@ -44,6 +44,7 @@
       hyprlock
       hypridle
       awww
+      rofi
       # ydotool
       # wev
     ];
