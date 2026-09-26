@@ -11,6 +11,13 @@
   ];
   nixpkgs.config.allowUnfree = true;
 
+  boot.loader.systemd-boot.configurationLimit = 5;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   networking.hostName = "nixos";
   time.timeZone = "Europe/Amsterdam";
   i18n.defaultLocale = "en_US.UTF-8";
