@@ -46,6 +46,7 @@
       # OTHER
       QT_STYLE_OVERRIDE = "adwaita-dark";
       GRIM_DEFAULT_DIR = "$HOME/media/pictures/screenshots";
+      DIRENV_LOG_FORMAT = "";
     };
   };
 }
