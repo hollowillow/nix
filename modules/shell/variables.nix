@@ -28,7 +28,7 @@
       # ENV VARIABLES
       TERMINAL = "ghostty";
       EDITOR = "nvim";
-      BROWSER = "firefox";
+      BROWSER = "librewolf";
       MENU = "fzf";
       MANPAGER = "nvim +Man! +'set relativenumber'";
       LS_COLORS = "$(dircolors -p)";
